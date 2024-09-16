@@ -16,7 +16,8 @@
 
 body {
   margin: 0;
-  font-family:
+  font-family: 'Courier New', Courier, monospace;
+  /* font-family:
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -27,7 +28,7 @@ body {
     Cantarell,
     "Open Sans",
     "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   background: var(--primary-background);
   color: var(--primary-text-color);
   font-size: calc(var(--pixel-size) * 2.25);

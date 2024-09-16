@@ -1,9 +1,8 @@
-
-let HEADER_REFS = {
-  'header-ref-0': '',
-  'header-ref-1': '/projects',
-  'header-ref-2': '/notes',
-  'header-ref-3': '/about',
+const HEADER_REFS = {
+  'nav-ref-0': '',
+  'nav-ref-1': '/projects',
+  'nav-ref-2': '/notes',
+  'nav-ref-3': '/about',
 }
 
 window.onload = (_) => {
