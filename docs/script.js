@@ -1,22 +1,20 @@
-const HEADER_REFS = {
-  'nav-ref-0': '',
-  'nav-ref-1': '/projects',
-  'nav-ref-2': '/notes',
-  'nav-ref-3': '/about',
+'use strict';
+
+const NAV_LINK_MAPPING = {
+  'nav-btn-0': '/',
+  'nav-btn-1': '/projects',
+  'nav-btn-2': '/notes',
+  'nav-btn-3': '/meta',
 }
 
-window.onload = (_) => {
-  const HREF = window.location.href
-  const HREF_PARTS = HREF.split('bjerke.dev/')
+const NAV_BAR = document.querySelector('#nav-global-top');
 
-  PATH = (HREF_PARTS.length == 1) ? HREF : HREF_PARTS[1];
+NAV_BAR.querySelectorAll('a').forEach(a => {
+  const REF = NAV_LINK_MAPPING[a.id];
 
-  for (const [k, v] of Object.entries(HEADER_REFS)) {
-    const header_link = document.getElementById(k)
-    header_link.href = v
-
-    if (PATH == v) {
-      header_link.classList.add("font-bold");
-    }
+  if (REF === undefined) {
+    console.error(`Missing page mapping for nav btn: ${a.id} (${a.innerText})`);
+  } else {
+    a.href = REF;
   }
-};
+});
