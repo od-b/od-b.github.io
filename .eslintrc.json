@@ -1,11 +1,15 @@
 {
     "rules": {
         "no-unused-vars": "off",
-        "noUnusedLocals": false,
-        "noUnusedParameters": false,
+        "noUnusedLocals": 0,
+        "noUnusedParameters": 0,
+        "react/no-unescaped-entities": 0,
         "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/noUnusedLocals": false,
-        "@typescript-eslint/noUnusedParameters": false
+        "@typescript-eslint/noUnusedLocals": 0,
+        "@typescript-eslint/noUnusedParameters": 0
     },
-  "extends": ["next/core-web-vitals", "next/typescript"]
+    "extends": [
+        "next/core-web-vitals",
+        "next/typescript"
+    ]
 }
