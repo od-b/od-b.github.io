@@ -1,31 +1,44 @@
 import clsx from "clsx"
-import Separator from "@/app/ui/separator";
-import NavAnchor from "@/app/ui/nav-link";
-import FlexContainer from "@/app/ui/flex-container";
 
+const Separator = () => {
+  return (
+    <span className="cursor-default select-none text-stone-400 text-opacity-80">
+      {'/'}
+    </span>
+  );
+}
 
-export default function NavGlobal({className}: {className?: string}) {
-  const separator = <Separator symbol="/" className="text-stone-400 text-opacity-80 pl-4" />
+export default function NavGlobal({ className }: { className?: string }) {
+  const anchor_style = "hover:opacity-70 hover:underline mr-5"
 
   return (
-    <FlexContainer
-      className={clsx(className)}
-      left={
-        <NavAnchor innerText="bjerke.dev" href="/" />
-      }
-      center={
-        <div className="flex flex-row mr-auto space-x-0 px-10">
-          {separator}
-          <NavAnchor innerText="projects" href="/projects" />
-          {separator}
-          <NavAnchor innerText="notes" href="/notes" />
-          {separator}
-          <NavAnchor innerText="meta" href="/meta" />
+    <div className={clsx(className)}>
+      <div className="flex flex-row md:container md:mx-auto">
+        <div className="flex flex-row w-2/12 min-w-fit justify-end ml-auto">
+          <a href="/" className={anchor_style}>
+            {'bjerke.dev'}
+          </a>
         </div>
-      }
-      right={
-        <NavAnchor innerText="right" href="/meta" />
-      }
-    />
+        <div className="flex flex-row flex-initial w-8/12 min-w-fit mx-auto">
+            <Separator />
+            <a href="/projects" className={anchor_style}>
+              {'projects'}
+            </a>
+            <Separator />
+            <a href="/notes" className={anchor_style}>
+              {'notes'}
+            </a>
+            <Separator />
+            <a href="/meta" className={anchor_style}>
+              {'meta'}
+            </a>
+        </div>
+        <div className="flex flex-row w-1/12 min-w-fit justify-end">
+          <a href="/badlink" className={anchor_style}>
+            {'404'}
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }

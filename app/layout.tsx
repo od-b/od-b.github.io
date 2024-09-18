@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { fonts } from '@/app/ui/fonts';
+
 import "@/app/ui/globals.css";
 import NavGlobal from "@/app/ui/nav-global";
-import FlexContainer from "@/app/ui/flex-container";
 
 export const metadata: Metadata = {
   title: {
@@ -19,16 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fonts.inter.className} antialiased bg-stone-600`}>
-        <NavGlobal className="shadow-md bg-neutral-50 py-2" />
-        <FlexContainer
-          center={
-            <div className="bg-neutral-50 p-2">
-              {children}
-            </div>
-          }
-        />
+      <body className={`${fonts.inter.className} bg-stone-600`}>
+        {/* outer header */}
+        <header className="flex sticky items-start -top-4 h-14">
+          <NavGlobal
+            className={`${fonts.jetbrainsmono.className} sticky py-2 top-0 w-screen h-10 max-h-10 bg-neutral-50 shadow-md`}
+          />
+        </header>
+        <div className="flex flex-row md:container md:mx-auto max-w-screen-lg p-2 min-h-[calc(100vh-4.5rem)] mb-4 scroll-smooth antialiased bg-neutral-50">
+          {children}
+        </div>
       </body>
     </html>
   );
 }
+
+/* rgb(245, 245, 247) */
