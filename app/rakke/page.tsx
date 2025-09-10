@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "projects",
+  title: "Rakke SRAD FC",
 };
 
 export default function Page() {
